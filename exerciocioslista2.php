@@ -52,9 +52,9 @@
                     $n1 = $_POST['n1'];
                     $n2 = $_POST['n2'];
                     if ($n1 < $n2)
-                        echo "<p>$n1 $n2</p>";
+                        echo "<p>$n1, $n2</p>";
                     elseif ($n1 > $n2)
-                        echo "<p>$n2 $n1</p>";					
+                        echo "<p>$n2, $n1</p>";					
                     else
                         echo "<p>Numeros iguais: $n1</p>";
                 }
@@ -66,7 +66,6 @@
                     <label for="p" class="form-label">Digite o valor do produto</label>
                     <input type="number" id="p" name="p" class="form-control" required="">
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
                 <?php
                 if($_POST)
                 {
@@ -81,7 +80,64 @@
                     }
                 }
                 ?>
+
+            <h1>Exercício 4</h1>
+                <div class="mb-3">
+                    <label for="mes" class="form-label">Digite o numero do mês</label>
+                    <input type="number" id="mes" name="mes" class="form-control" required="">
+                </div>
+                <?php
+                    if($_POST)
+                        {
+                        $mes = $_POST['mes'];
+                        switch($mes){
+                            case 1:
+                                echo "Janeiro";
+                                break;
+                            case 2:
+                                echo "Fevereiro";
+                                break;
+                            case 3:
+                                echo "Março";
+                                break;
+                            case 4:
+                                echo "Abril";
+                                break;
+                            case 5:
+                                echo "Maio";
+                                break;
+                            case 6:
+                                echo "Junho";
+                                break;
+                            case 7:
+                                echo "Julho";
+                                break;
+                            case 8:
+                                echo "Agosto";
+                                break;
+                            case 9:
+                                echo "Setembro";
+                                break;
+                            case 10:
+                                echo "Outubro";
+                                break;
+                            case 11:
+                                echo "Novembro";
+                                break;
+                            case 12:
+                                echo "Dezembro";
+                                break;
+                            default:
+                                echo "Valor invalido";
+                                break;
+                            }
+                        }
+                ?>
+            <h1>Exercício 5</h1>
+            <div>
+                <button type="submit" class="btn btn-success">Enviar</button>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+            </div>
         </form>
     </div>
 </body>
