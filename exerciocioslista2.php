@@ -9,10 +9,11 @@
 <body>
     <div class="container py-3">
         <form method="post" action="exerciocioslista2.php">
+
             <h1>Exercicio 1</h1>
             <div class="mb-3">
-                <label for="num" class="form-label">Digite um numero</label>
-                <input type="number" id="num" name="num" class="form-control" required="">
+                <label for="num1" class="form-label">Digite um numero</label>
+                <input type="number" id="num1" name="num1" class="form-control" required="">
             </div>
             <div class="mb-3">
                 <label for="num2" class="form-label">Digite um segundo numero</label>
@@ -21,16 +22,16 @@
 			<?php
             if($_POST)
 			{
-				$num = $_POST['num'];
+				$num1 = $_POST['num1'];
 				$num2 = $_POST['num2'];
-				if ($num == $num2)
+				if ($num1 == $num2)
 				{
-					$triplo = $num * 3;
+					$triplo = $num1 * 3;
 					echo "<p>$triplo</p>";
 				}
 				else
 				{
-					$soma = $num + $num2;
+					$soma = $num1 + $num2;
 					echo "<p>$soma</p>";
 				}
             }
@@ -133,8 +134,92 @@
                             }
                         }
                 ?>
+
             <h1>Exercício 5</h1>
-            <div>
+            <div class="mb-3">
+              <label for="num" class="form-label">Informe um numero</label>
+              <input type="number" id="num" name="num" class="form-control" required="">
+            </div>
+            <?php
+            if($_POST)
+                {
+                    $num = $_POST['num'];
+                    for($i = 1; $i <= $num; $i++)
+                        echo "<p>$i</p>";   
+                }
+            ?>
+
+            <h1>Exercício 6</h1>
+            <div class="mb-3">
+              <label for="n3" class="form-label">Informe um valor</label>
+              <input type="number" id="n3" name="n3" class="form-control" required="">
+            </div>
+            <?php
+            if($_POST)
+                {
+                    $n3 = $_POST['n3'];
+                    $N = 1;
+                    $som = 0;
+                    while($N <= $n3)
+                        {
+                            $som = $som + $N;
+                            echo "<p>$som</p>";
+                            $N++;
+                        }
+                }
+            ?>
+
+            <h1>Exercício 7</h1>
+            <div class="mb-3">
+              <label for="n4" class="form-label">Informe um número</label>
+              <input type="number" id="n4" name="n4" class="form-control" required="">
+            </div>
+            <?php
+            if($_POST)
+                {
+                    $n4 = $_POST['n4'];
+                    do{
+                        echo "<p>$n4</p>";
+                        $n4--;
+                    }while($n4 >= 1);
+                }
+            ?>
+
+            <h1>Exercício 8</h1>
+            <div class="mb-3">
+              <label for="n5" class="form-label">Informe um número</label>
+              <input type="number" id="n5" name="n5" class="form-control" required="">
+            </div>
+            <?php
+            if($_POST)
+                {
+                    $n5 = $_POST['n5'];
+                    $fat = 1;
+                    for($i = 1; $i <= $n5; $i++)
+                        $fat = $fat * $i;
+                    echo "<p>$fat</p>";   
+
+                }
+            ?>
+
+            <h1>Exercício 9</h1>
+            <div class="mb-3">
+              <label for="n6" class="form-label">Informe um número</label>
+              <input type="number" id="n6" name="n6" class="form-control" required="">
+            </div>
+            <?php
+            if($_POST)
+                {
+                    $n6 = $_POST['n6'];
+                    for($i = 1; $i <= 10; $i++)
+                        {
+                            echo $n6 . " x " . $i . " = " . ($n6 * $i);
+                            echo "<p></p>";
+                        }
+
+                }
+            ?> 
+            <div style="margin-top: 10px;">
                 <button type="submit" class="btn btn-success">Enviar</button>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
             </div>
