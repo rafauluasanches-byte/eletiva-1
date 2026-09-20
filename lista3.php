@@ -28,7 +28,7 @@
                             {
                                 $qtd = strlen($palavra);
                                 echo "<p>Quantidade de caracteres: $qtd</p>";
-                                echo "<strong>Exercício 2</strong>";
+                                echo "<h4>Exercício 2</h4>";
                                 echo "<p>Maiusculo: ". strtoupper($palavra) ."</p>";
                                 echo "<p>Minusculo: ". strtolower($palavra) ."</p>";
                             }
@@ -175,7 +175,7 @@
             <?php
                 if($_POST)
                     {   
-                        $nome = $_POST['nome'];
+                        $nome = strtoupper($_POST['nome']);
                         $nomes = explode(" ", $nome);
                         if($nome != "")
                             {
@@ -186,7 +186,81 @@
                             }
                     }
             ?>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <h3>Exercício 11</h3>
+            <div class="mb-3">
+              <label for="valor" class="form-label">Informe um valor</label>
+              <input type="text" id="valor" name="valor" class="form-control" required="">
+            </div>
+            <?php
+                if($_POST)
+                    {   
+                        $valor = $_POST['valor'];
+                        echo "<p>R$".number_format($valor, 2, ',', '.')."</p>";
+                    }
+            ?>
+            <h3>Exercício 12</h3>
+            <?php
+                $senha = "";
+                for ($i = 0; $i < 8; $i++)
+                    { 
+                        $t = rand(1, 2); 
+                        if ($t == 1) 
+                            $senha = $senha . chr(rand(65, 90)); 
+                        else 
+                            $senha = $senha . rand(0, 9); 
+                    } 
+                    echo "<p>Senha: " .$senha."</p>";
+            ?>
+            <h3>Exercício 13</h3>
+            <div class="mb-3">
+              <label for="frase2" class="form-label">Digite uma frase</label>
+              <input type="text" id="frase2" name="frase2" class="form-control" required="">
+            </div>
+            <?php
+                if($_POST)
+                    {   
+                        $frase2 = trim($_POST["frase2"]); 
+                        $palavras = str_word_count($frase2); 
+                        $lista = str_word_count($frase2, 1); 
+                        $maior = ""; 
+                        foreach ($lista as $palavra3) { 
+                            if (strlen($palavra3) > strlen($maior)) 
+                                { $maior = $palavra3; } 
+                            }
+                            echo "<p>Número de palavras: " . $palavras . "</p>"; 
+                            echo "<p>Maior palavra: " . $maior . "</p>";
+                    }
+            ?>
+            <h3>Exercício 14</h3>
+            <div class="mb-3">
+              <label for="p2" class="form-label">Digite uma palavra</label>
+              <input type="text" id="p2" name="p2" class="form-control" required="">
+            </div>
+            <?php
+                if($_POST)
+                    {   
+                        $p2 = $_POST["p2"];
+                        $p3 = strrev($p2);
+                        if ($p3 == $p2)
+                            echo "<p>$p2 é um palindromo</p>";
+                        else
+                            echo "<p>$p2 não é um palindromo</p>";
+                    }
+            ?>
+            <h3>Exercício 15</h3>
+            <div class="mb-3">
+              <label for="email" class="form-label">Digite uma frase</label>
+              <input type="email" id="email" name="email" class="form-control" required="">
+            </div>
+            <?php
+                if($_POST)
+                    {   
+                        $email = $_POST["email"];
+                        $dom = explode("@", $email);
+                        echo "<p>Domínio: $dom[1] </p>";
+                    }
+            ?>
+            <button type="submit" class="btn btn-success">Enviar</button>
         </form>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </div>
