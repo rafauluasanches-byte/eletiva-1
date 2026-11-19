@@ -1,6 +1,6 @@
 <?php
     if(isset($_GET['idproc'])){
-        $idprofi = $_GET['idproc'];
+        $idproc = $_GET['idproc'];
         require_once("conexao.php");
         $sql = "SELECT * FROM procedimentos WHERE idproc = :idproc";
         $resultado = $con->prepare($sql);
@@ -40,7 +40,7 @@
                     <input value="<?= $dados['profi']?>" type="text" id="profi" name="profi" class="form-control" required="">
                 </div>
                 <button type="submit" class="btn btn-primary">Alterar</button>
-                <a href="excluirProf.php?idprofi=<?= $dados['idprofi'] ?>" class="btn btn-danger">Excluir</a>
+                <a href="excluirProc.php?idproc=<?= $dados['idproc'] ?>" class="btn btn-danger">Excluir</a>
             </form>
             <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'POST'){

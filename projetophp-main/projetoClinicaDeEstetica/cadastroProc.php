@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Novo Profissional</title>
+        <title>Novo procedimento</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     </head>
     <body> 
         <div class="container py-3">
-            <h1>Novo Profissional</h1>
+            <h1>Novo procedimento</h1>
             <form method="post">
                 <div class="mb-3">
-                    <label for="nomeProc" class="form-label">Informe o nome do Profissional</label>
-                    <input type="text" id="nomeProfi" name="nomeProc" class="form-control" required="">
+                    <label for="nomeProc" class="form-label">Informe o nome do procedimento</label>
+                    <input type="text" id="nomeProc" name="nomeProc" class="form-control" required="">
                 </div>
                 <div class="mb-3">
                     <label for="preco" class="form-label">Informe o preço</label>
@@ -26,7 +26,7 @@
             </form>
             <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    $nomeProfi = $_POST['nomeProc'];
+                    $nomeProc = $_POST['nomeProc'];
                     $preco = $_POST['preco'];
                     $profi = $_POST['profi'];
                     require_once("conexao.php");

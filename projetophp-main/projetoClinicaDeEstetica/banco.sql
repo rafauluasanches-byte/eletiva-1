@@ -18,5 +18,5 @@ CREATE TABLE profissionais (
 	nomeProfi VARCHAR(100) NOT NULL,
 	telefoneProfi VARCHAR(20) NOT NULL,
 	cnpjProfi VARCHAR(18) NOT NULL,
-	endrecoProfi VARCHAR(255) NOT NULL
+	enderecoProfi VARCHAR(255) NOT NULL
 );

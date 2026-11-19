@@ -1,6 +1,6 @@
 <?php
 
-    $str = "mysql:host=localhost;dbname=projetoClinicaDeEsteticaphp";
+    $str = "mysql:host=localhost;dbname=banco";
     $user = "root";
     $pwd = "";
 
